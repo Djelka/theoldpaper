@@ -52,7 +52,7 @@ class SecurityController extends Controller
                 : null;
         }
         
-        $url = $this->generateUrl('frontend_homepage');
+        $url = $this->generateUrl('frontend_account');
         $response = new RedirectResponse($url);
         return $response;
     }

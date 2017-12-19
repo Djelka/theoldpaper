@@ -3,6 +3,7 @@
 body
 {
 	overflow-x:hidden;
+	font-family: 'Lobster Two', cursive;
 }
 
 .img-header
@@ -83,7 +84,6 @@ body
 
 .citation
 {
-	font-family: 'Times New Roman';
 	font-size:25px;
 	color:#FFFFFF;
 }
@@ -138,10 +138,14 @@ body
 	padding:20px;
 }
 
+.text-black p
+{
+	font-size:21px;
+}
+
 .main-div-accueil p
 {
 	color:#000000;
-	font-size:15px;
 	color:#FFFFFF;
 	z-index:2;
 	opacity:1;
@@ -212,6 +216,11 @@ body
 
 /* ACCOUNT */
 
+.empty-div
+{
+	height:50px;
+}
+
 .infouser
 {
 	background-color:#000000;
@@ -239,16 +248,15 @@ body
 .usernamefont
 {
 	font-size:50px;
-	font-family: 'Times New Roman';
 	position:absolute;
 	top:10px;
 	left:150px;
+	color:#B45F04;
 }
 
 .rankfont
 {
 	font-size:25px;
-	font-family: 'Times New Roman';
 	position:absolute;
 	top:80px;
 	left:150px;
