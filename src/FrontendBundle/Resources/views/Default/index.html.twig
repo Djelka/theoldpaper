@@ -5,11 +5,89 @@
     <form class="navbar-form" action="{{ path('user_login_check') }}" method="post">
         <div class="form-group">
           <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-          <input type="text" style="position:absolute;top:12px;right:330px;" id="username" name="_username" required="required" />
-          <input type="password" style="position:absolute;top:12px;right:140px;" id="password" name="_password" required="required"/>
+          <input type="text" placeholder="Nom de compte" style="position:absolute;top:12px;right:330px;" id="username" name="_username" required="required" />
+          <input type="password" placeholder="Mot de passe" style="position:absolute;top:12px;right:140px;" id="password" name="_password" required="required"/>
           <input type="hidden" id="remember_me" name="_remember_me" value="on" />
         </div>
-          <button type="submit" style="position:absolute;top:12px;right:10px;height:30px;padding-top:1px;" id="_submit" name="_submit" class="btn btn-warning" style="color:#000000;">Se connecter</button>
+          <button type="submit" style="position:absolute;background-color:#B45F04;top:12px;right:10px;height:30px;padding-top:1px;" id="_submit" name="_submit" class="btn" style="color:#FFFFFF;"><span style="color:#FFFFFF;">Se connecter</span></button>
     </form>
     
+{% endblock %}
+
+{% block body %}
+
+	<div class="relative">
+		<div class="div-paralax-fixed"></div>
+
+		<div class="row">
+			<div class="col-md-8 offset-md-2 citation-div">
+				<p class="citation"><i>- "Qui dépasse ses propres limites les met en question." - <span style="color:#B45F04;">Alphonse Karr</span></i></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8 offset-md-2">
+				<div class="row">
+					<div class="col-md-7 main-div-accueil">
+						<div class="back-black"></div>
+						<div class="text-black">
+							<p>Découvrez un nouveau style de jeu de rôle grâce à "<strong>The Lost Paper</strong>".</p>
+							<p><strong>Pas de maître du jeu</strong>, chacun écris son histoire et progresse selon les choix de ses compagnons.</p> 
+							<p>Le jeu fonctionne par un <strong>système de vote</strong> qui poussera les joueurs à s'accorder avec l'esprit de la partie.</p>
+							<p>Récupérer des objets, <strong>forger votre histoire</strong> et parcourez le monde.<p>
+							<p>La seule limite est votre <strong>imagination</strong>.<p>
+						</div>
+					</div>
+					<div class="col-md-4 offset-md-1 register-div">
+						<div class="back-black"></div>
+						{{ form_start(form, {'method': 'post', 'action': path('user_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+							<div class="col-md-12 align-center">
+								<p>Nom de compte : </p>
+								{{ form_widget(form.username) }}
+								{{ form_errors(form.username) }}
+							</div>
+							<div class="col-md-12 align-center">
+								<p>Adresse E-mail : </p>
+								{{ form_widget(form.email) }}
+								{{ form_errors(form.email) }}
+							</div>
+							<div class="col-md-12 align-center">
+								<p>Mot de pass : </p>
+								{{ form_widget(form.plainPassword.first) }}
+								{{ form_errors(form.plainPassword.first) }}
+							</div>
+							<div class="col-md-12 align-center">
+								<p>Confirmation : </p>
+								{{ form_widget(form.plainPassword.second) }}
+								{{ form_errors(form.plainPassword.second) }}
+							</div>
+							<div class="col-md-12 align-center">
+								<input class="btn" style="margin-top:20px;color:#FFFFFF;background-color:#B45F04;" type="submit" value="Valider">
+							</div>
+						{{ form_end(form) }}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="img-paralax-fixed">
+			<div class="row">
+				<div class="col-md-8 offset-md-2">
+					<div class="row">
+						<div class="col-md-12 devlogs-title-div">
+							<p class="devlogs-title"> <span style="color:#B45F04;"><i class="fa fa-file-code-o" aria-hidden="true"></i></span> Devlogs</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 devlogs-div-accueil">
+							<p class="devlogs"><strong>[V <span style="color:#B45F04;">0.0.0</strong></span>] - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+							<p class="devlogs"><strong>[V <span style="color:#B45F04;">0.0.0</strong></span>] - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+							<p class="devlogs"><strong>[V <span style="color:#B45F04;">0.0.0</strong></span>] - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+							<p class="devlogs"><strong>[V <span style="color:#B45F04;">0.0.0</strong></span>] - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+							<p class="devlogs"><strong>[V <span style="color:#B45F04;">0.0.0</strong></span>] - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 {% endblock %}

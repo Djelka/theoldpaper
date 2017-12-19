@@ -3,7 +3,7 @@
     <head>
 
         <meta charset="UTF-8" />
-        <title>LR Auto</title>
+        <title>The Old Paper</title>
 
         <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}" >
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
@@ -16,9 +16,9 @@
 
     </head>
 
-    <body>
+    <body style="background-color:#000000;">
 
-        <div class="col-md-12" style="height:100px;text-align:center;">
+        <div class="col-md-12" style="background-color:#000000;height:100px;text-align:center;">
             <img src="{{ asset('img/write.jpeg')}}" class="img-header">
             <h1 class="main-title" style="font-family: 'Times New Roman';font-size:50px;">The Old Paper</h1>
             <p class="version-main">V.0.0.0</p>
@@ -33,7 +33,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                <a class="nav-link" style="color:#FFBF00" href="#">Accueil</a>
+                <a class="nav-link" style="color:#B45F04" href="#">Accueil</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link disabled" href="#">Session en cours</a>
@@ -43,7 +43,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i style="color:#FFBF00;" class="fa fa-user" aria-hidden="true"></i> <span style="color:#FFFFFF;;">Bonjour</span><span style="color:#FFBF00;"> {{ app.user.username }}</span>
+                      <i style="color:#B45F04;" class="fa fa-user" aria-hidden="true"></i> <span style="color:#FFFFFF;;">Bonjour</span><span style="color:#B45F04;"> {{ app.user.username }}</span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="{{ path('frontend_account') }}">Mon Compte</a>
@@ -59,15 +59,36 @@
           </div>
         </nav>
 
-        <div class="background-main">
+        <div class="relative">
+
+          <div class="background-main">
+          </div>
+
+          {% block body %}{% endblock %}
+
+          <div class="row">
+            <div class="col-md-12 footer">
+              <div class="row">
+                <div class="col-md-4 support">
+                  <p style="color:#FFFFFF;">Vous avez détecté un <span style="color:#B45F04;font-weight:bold;">BUG</span> ou vous rencontrez un soucis ?</p>
+                  <p style="color:#FFFFFF;">Contactez dès maintenant le <span style="color:#B45F04;font-weight:bold;">Support</span> à cette adresse :</p>
+                  <a style="color:#FFFFFF" href="#">theoldpaper.support@gmail.com</a>
+                </div>
+                <div class="col-md-4 offset-md-4 follow-us">
+                  <div class="logo"></div>
+                  <div class="logo"></div>
+                  <div class="logo"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 sub-footer">
+              <p>Created by <strong>Djelka</strong> © Copyright 2017</p>
+            </div>
+          </div>
+
         </div>
 
-        {% block body %}{% endblock %}
-
-        <div class="col-md-12 footer">
-        </div>
-        <div class="col-md-12 sub-footer">
-          <p>Created by Djelka © Copyright 2017</p>
-        </div>
     </body>
 </html>

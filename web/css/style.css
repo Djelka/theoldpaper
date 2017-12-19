@@ -1,11 +1,17 @@
 /* GLOBAL */
 
+body
+{
+	overflow-x:hidden;
+}
+
 .img-header
 {
-	position:absolute;
-	left:0%;
-	width:100%;
-	height:auto;
+	position:fixed;
+	left:0px;
+	top:0px;
+	min-height:100%;
+	min-width:100%;
 	z-index:-2;
 }
 
@@ -23,10 +29,17 @@
 	color:#FFFFFF;
 }
 
+.relative
+{
+	position:relative;
+}
+
 .background-main
 {
 	position:absolute;
-	top:155px;
+	top:0px;
+	bottom:0px;
+	opacity:0;
 	background-color:#191007;
 	width:100%;
 	height:100%;
@@ -36,7 +49,7 @@
 .sub-footer
 {
 	height:50px;
-	border-top:solid #FFBF00 3px;
+	border-top:solid #B45F04 3px;
 	text-align:center;
 	padding-top:10px;
 	color:grey;
@@ -45,9 +58,154 @@
 
 .footer
 {
-	margin-top:50px;
-	height:200px;
+	border-top:solid #353A40 3px;
+	min-height:200px;
 	background-color:#000000;
+}
+
+.img-paralax-fixed
+{
+	background-color:#343a40;
+	z-index:-2;
+	margin-top:50px;
+	padding-bottom:50px;
+}
+
+.citation-div
+{
+	text-align:center;
+	margin-top:50px;
+	font-weight:bold;
+	background-color:#000000;
+	opacity:0.5;
+	padding-top:10px;
+}
+
+.citation
+{
+	font-family: 'Times New Roman';
+	font-size:25px;
+	color:#FFFFFF;
+}
+
+.register-div
+{
+	min-height:450px;
+	margin-top:50px;
+	position:relative;
+	padding:30px;
+}
+
+.main-div-accueil
+{
+	min-height:450px;
+	position:relative;
+	margin-top:50px;
+	padding:30px;
+}
+
+.align-center
+{
+	text-align:center;
+	padding-top:10px;
+}
+
+.align-center p
+{
+	color:#FFFFFF;
+}
+
+.back-black
+{
+	position:absolute;
+	height:100%;
+	width:100%;
+	top:0px;
+	left:0px;
+	background-color:#000000;
+	opacity:0.5;
+	z-index:0;
+}
+
+.text-black
+{
+	position:relative;
+	height:100%;
+	width:100%;
+	top:0px;
+	left:0px;
+	z-index:1;
+	padding:20px;
+}
+
+.main-div-accueil p
+{
+	color:#000000;
+	font-size:15px;
+	color:#FFFFFF;
+	z-index:2;
+	opacity:1;
+}
+
+.main-div-accueil img
+{
+	position:absolute;
+	top:100px;
+	left:0px;
+	width:100%;
+	height:100%;
+}
+
+.devlogs-title-div
+{
+	text-align:center;
+	height:50px;
+	margin-top:50px;
+}
+
+.devlogs-title
+{
+	color:#FFFFFF;
+	font-size:30px;
+}
+
+.devlogs
+{
+	font-family: 'Courier';
+	color:#FFFFFF;
+}
+
+.devlogs-div-accueil
+{
+	background-color:#000000;
+	border:solid #FFFFFF 1px;
+	overflow-y:scroll;
+	height:200px; 
+	margin-top:20px;
+	padding:20px 50px 20px 50px;
+}
+
+.support
+{
+	text-align:left;
+	padding-left:50px;
+	padding-top:50px;
+}
+
+.follow-us
+{
+	padding-right:50px;
+	padding-top:50px;
+	text-align:right;
+}
+
+.logo
+{
+	height:50px;
+	width:50px;
+	border:solid #FFFFFF 1px;
+	display:inline-block;
+	margin:10px;
 }
 
 /* END GLOBAL */
