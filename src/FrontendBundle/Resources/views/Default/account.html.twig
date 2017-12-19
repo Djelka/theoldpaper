@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+	<div class="row">
+		<div class="infouser col-md-10 offset-md-1">
+			<div class="row">
+				<div class="col-md-6 usernamediv">
+					<div class="avatar"></div>
+					<p class="usernamefont">{{ app.user.username }}</p>
+					<p class="rankfont">Rang : <span style="color:#FFBF00;">{{ userRank }}</span></p>
+				</div>
+				<div class="col-md-6" style="padding:10px;">
+					<p>{{ userNbGame }}</p>
+					<p>{{ userNbPost }}</p>
+					<p>{{ userNbVote }}</p>
+					<p>{{ userNbcounter }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

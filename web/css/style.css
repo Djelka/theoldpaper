@@ -1,0 +1,97 @@
+/* GLOBAL */
+
+.img-header
+{
+	position:absolute;
+	left:0%;
+	width:100%;
+	height:auto;
+	z-index:-2;
+}
+
+.main-title
+{
+	color:#FFFFFF;
+	padding-top:20px;
+}
+
+.version-main
+{
+	position:absolute;
+	top:5px;
+	right:10px;
+	color:#FFFFFF;
+}
+
+.background-main
+{
+	position:absolute;
+	top:155px;
+	background-color:#191007;
+	width:100%;
+	height:100%;
+	z-index:-1;
+}
+
+.sub-footer
+{
+	height:50px;
+	border-top:solid #FFBF00 3px;
+	text-align:center;
+	padding-top:10px;
+	color:grey;
+	background-color:#353A40;
+}
+
+.footer
+{
+	margin-top:50px;
+	height:200px;
+	background-color:#000000;
+}
+
+/* END GLOBAL */
+
+/* ACCOUNT */
+
+.infouser
+{
+	background-color:#000000;
+	border:solid grey 2px;
+	margin-top:50px;
+	height:200px;
+	color:#FFFFFF;
+}
+
+.usernamediv
+{
+	padding-left:30px;
+	padding-top:30px;
+	position:relative;
+}
+
+.usernamediv .avatar
+{
+	height:100px;
+	width:100px;
+	border:solid #FFFFFF 1px;
+	display:inline-block;
+}
+
+.usernamefont
+{
+	font-size:50px;
+	font-family: 'Times New Roman';
+	position:absolute;
+	top:10px;
+	left:150px;
+}
+
+.rankfont
+{
+	font-size:25px;
+	font-family: 'Times New Roman';
+	position:absolute;
+	top:80px;
+	left:150px;
+}

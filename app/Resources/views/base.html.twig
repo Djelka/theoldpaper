@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="UTF-8" />
+        <title>LR Auto</title>
+
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}" >
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.css') }}" >
+
+        <script type="text/javascript" src="{{ asset('script/jquery.js') }}" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="{{ asset('script/bootstrap.js') }}" ></script>
+        <script type="text/javascript" src="{{ asset('script/script.js') }}" ></script>
+
+    </head>
+
+    <body>
+
+        <div class="col-md-12" style="height:100px;text-align:center;">
+            <img src="{{ asset('img/write.jpeg')}}" class="img-header">
+            <h1 class="main-title" style="font-family: 'Times New Roman';font-size:50px;">The Old Paper</h1>
+            <p class="version-main">V.0.0.0</p>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="#"><strong>Navigation</strong></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" style="color:#FFBF00" href="#">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Session en cours</a>
+              </li>
+            </ul>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i style="color:#FFBF00;" class="fa fa-user" aria-hidden="true"></i> <span style="color:#FFFFFF;;">Bonjour</span><span style="color:#FFBF00;"> {{ app.user.username }}</span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{{ path('frontend_account') }}">Mon Compte</a>
+                      <a class="dropdown-item" href="#">Mes Parties</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="{{ path('fos_user_security_logout') }}">Se déconnecter</a>
+                    </div>
+                </li>
+            </ul>
+            {% else %}
+                {% block login %}{% endblock %}
+            {% endif %}
+          </div>
+        </nav>
+
+        <div class="background-main">
+        </div>
+
+        {% block body %}{% endblock %}
+
+        <div class="col-md-12 footer">
+        </div>
+        <div class="col-md-12 sub-footer">
+          <p>Created by Djelka © Copyright 2017</p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block login %}
+
+    <form class="navbar-form" action="{{ path('user_login_check') }}" method="post">
+        <div class="form-group">
+          <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+          <input type="text" style="position:absolute;top:12px;right:330px;" id="username" name="_username" required="required" />
+          <input type="password" style="position:absolute;top:12px;right:140px;" id="password" name="_password" required="required"/>
+          <input type="hidden" id="remember_me" name="_remember_me" value="on" />
+        </div>
+          <button type="submit" style="position:absolute;top:12px;right:10px;height:30px;padding-top:1px;" id="_submit" name="_submit" class="btn btn-warning" style="color:#000000;">Se connecter</button>
+    </form>
+    
+{% endblock %}
