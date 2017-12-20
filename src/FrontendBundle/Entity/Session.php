@@ -43,9 +43,9 @@ class Session
     private $day;
 
     /**
-     * @var string
+     * @var int
      *
-     * @ORM\Column(name="players", type="string", length=255, nullable=true)
+     * @ORM\Column(name="players", type="integer", nullable=true)
      */
     private $players;
 
@@ -55,6 +55,14 @@ class Session
      * @ORM\Column(name="state", type="integer", nullable=true)
      */
     private $state;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="context", type="text", nullable=true)
+     */
+    private $context;
 
 
     /**
@@ -142,7 +150,7 @@ class Session
     /**
      * Set players
      *
-     * @param string $players
+     * @param integer $players
      *
      * @return Session
      */
@@ -156,7 +164,7 @@ class Session
     /**
      * Get players
      *
-     * @return string
+     * @return int
      */
     public function getPlayers()
     {
@@ -168,7 +176,7 @@ class Session
      *
      * @param integer $state
      *
-     * @return Datauser
+     * @return Session
      */
     public function setState($state)
     {
@@ -185,6 +193,30 @@ class Session
     public function getState()
     {
         return $this->state;
+    }
+
+    /**
+     * Set context
+     *
+     * @param string $context
+     *
+     * @return Session
+     */
+    public function setContext($context)
+    {
+        $this->context = $context;
+
+        return $this;
+    }
+
+    /**
+     * Get context
+     *
+     * @return string
+     */
+    public function getContext()
+    {
+        return $this->context;
     }
 }
 

@@ -49,6 +49,40 @@ class Usersession
      */
     private $pocketid;
 
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="life", type="integer", nullable=true)
+     */
+    private $life;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="gold", type="integer", nullable=true)
+     */
+    private $gold;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="sexe", type="integer", nullable=true)
+     */
+    private $sexe;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="state", type="string", length=255, nullable=true)
+     */
+    private $state;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="typestate", type="integer", nullable=true)
+     */
+    private $typestate;
 
     /**
      * Get id
@@ -154,6 +188,150 @@ class Usersession
     public function getIdsession()
     {
         return $this->idsession;
+    }
+
+    /**
+     * Set life
+     *
+     * @param integer $life
+     *
+     * @return Usersession
+     */
+    public function setLife($life)
+    {
+        $this->life = $life;
+
+        return $this;
+    }
+
+    /**
+     * Get life
+     *
+     * @return int
+     */
+    public function getLife()
+    {
+        return $this->life;
+    }
+
+    /**
+     * Set gold
+     *
+     * @param integer $gold
+     *
+     * @return Usersession
+     */
+    public function setGold($gold)
+    {
+        $this->gold = $gold;
+
+        return $this;
+    }
+
+    /**
+     * Get gold
+     *
+     * @return int
+     */
+    public function getGold()
+    {
+        return $this->gold;
+    }
+
+    /**
+     * Set sexe
+     *
+     * @param integer $sexe
+     *
+     * @return Usersession
+     */
+    public function setSexe($sexe)
+    {
+        $this->sexe = $sexe;
+
+        return $this;
+    }
+
+    /**
+     * Get sexe
+     *
+     * @return int
+     */
+    public function getSexe()
+    {
+        return $this->sexe;
+    }
+
+    /**
+     * Set typestate
+     *
+     * @param integer $typestate
+     *
+     * @return Usersession
+     */
+    public function setTypestate($typestate)
+    {
+        $this->typestate = $typestate;
+
+        return $this;
+    }
+
+    /**
+     * Get typestate
+     *
+     * @return int
+     */
+    public function getTypestate()
+    {
+        return $this->typestate;
+    }
+
+    /**
+     * Set state
+     *
+     * @param string $state
+     *
+     * @return Usersession
+     */
+    public function setState($state)
+    {
+        $this->state = $state;
+
+        return $this;
+    }
+
+    /**
+     * Get state
+     *
+     * @return string
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Usersession
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 }
 

@@ -29,13 +29,6 @@ class Post
     private $content;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="iscontext", type="string", length=255, nullable=true)
-     */
-    private $iscontext;
-
-    /**
      * @var int
      *
      * @ORM\Column(name="goodvote", type="integer", nullable=true)
@@ -96,30 +89,6 @@ class Post
     public function getContent()
     {
         return $this->content;
-    }
-
-    /**
-     * Set iscontext
-     *
-     * @param string $iscontext
-     *
-     * @return Post
-     */
-    public function setIscontext($iscontext)
-    {
-        $this->iscontext = $iscontext;
-
-        return $this;
-    }
-
-    /**
-     * Get iscontext
-     *
-     * @return string
-     */
-    public function getIscontext()
-    {
-        return $this->iscontext;
     }
 
     /**

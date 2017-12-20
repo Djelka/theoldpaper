@@ -65,6 +65,7 @@ class RegistrationController extends Controller
             $datauser->setNbvote(0);
             $datauser->setNbcounter(0);
             $datauser->setNbgame(0);
+            $datauser->setNbgamecreate(0);
             $em->persist($datauser);
             $em->flush();
         }

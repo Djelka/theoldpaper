@@ -36,6 +36,13 @@ class Comment
     private $iscounter;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="isvalidate", type="string", length=255, nullable=true)
+     */
+    private $isvalidate;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="author", type="integer", nullable=true)c
@@ -62,6 +69,13 @@ class Comment
      * @ORM\Column(name="content", type="text", nullable=true)
      */
     private $content;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="contenthrp", type="text", nullable=true)
+     */
+    private $contenthrp;
 
 
     /**
@@ -120,6 +134,30 @@ class Comment
     public function getIscounter()
     {
         return $this->iscounter;
+    }
+
+    /**
+     * Set isvalidate
+     *
+     * @param string $isvalidate
+     *
+     * @return Comment
+     */
+    public function setIsvalidate($isvalidate)
+    {
+        $this->isvalidate = $isvalidate;
+
+        return $this;
+    }
+
+    /**
+     * Get isvalidate
+     *
+     * @return string
+     */
+    public function getIsvalidate()
+    {
+        return $this->isvalidate;
     }
 
     /**
@@ -216,6 +254,30 @@ class Comment
     public function getContent()
     {
         return $this->content;
+    }
+
+    /**
+     * Set contenthrp
+     *
+     * @param string $contenthrp
+     *
+     * @return Comment
+     */
+    public function setContenthrp($contenthrp)
+    {
+        $this->contenthrp = $contenthrp;
+
+        return $this;
+    }
+
+    /**
+     * Get contenthrp
+     *
+     * @return string
+     */
+    public function getContenthrp()
+    {
+        return $this->contenthrp;
     }
 }
 

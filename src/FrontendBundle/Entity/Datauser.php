@@ -79,6 +79,14 @@ class Datauser
 
 
     /**
+     * @var int
+     *
+     * @ORM\Column(name="nbgamecreate", type="integer", nullable=true)
+     */
+    private $nbgamecreate;
+
+
+    /**
      * Get id
      *
      * @return int
@@ -122,6 +130,30 @@ class Datauser
     public function setNbpost($nbpost)
     {
         $this->nbpost = $nbpost;
+
+        return $this;
+    }
+
+    /**
+     * Get nbcreate
+     *
+     * @return int
+     */
+    public function getNbcreate()
+    {
+        return $this->nbcreate;
+    }
+
+    /**
+     * Set nbcreate
+     *
+     * @param integer $nbcreate
+     *
+     * @return Datauser
+     */
+    public function setNbcreate($nbcreate)
+    {
+        $this->nbcreate = $nbcreate;
 
         return $this;
     }
@@ -278,6 +310,30 @@ class Datauser
     public function getNbgame()
     {
         return $this->nbgame;
+    }
+
+    /**
+     * Set nbgamecreate
+     *
+     * @param integer $nbgamecreate
+     *
+     * @return Datauser
+     */
+    public function setNbgamecreate($nbgamecreate)
+    {
+        $this->nbgamecreate = $nbgamecreate;
+
+        return $this;
+    }
+
+    /**
+     * Get nbgamecreate
+     *
+     * @return int
+     */
+    public function getNbgamecreate()
+    {
+        return $this->nbgamecreate;
     }
 }
 

@@ -35,6 +35,7 @@ class DefaultController extends Controller
         $infoUser = $em->getRepository('FrontendBundle:Datauser')->findOneByIduser($user->getId());
 
         $userNbGame = $infoUser->getNbgame();
+        $userNbGamecreate = $infoUser->getNbgamecreate();
         $userNbPost = $infoUser->getNbpost();
         $userNbVote = $infoUser->getNbVote();
         $userNbcounter = $infoUser->getNbCounter();
@@ -66,7 +67,9 @@ class DefaultController extends Controller
             'userRank' => $userRank,
             'userExp' => $userExp,
             'progressBar' => $progressBar,
-            'userNextLvlExp' => $userNextLvlExp
+            'userNextLvlExp' => $userNextLvlExp,
+            'userNbGamecreate' => $userNbGamecreate
+
         ));
 
     }
