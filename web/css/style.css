@@ -77,14 +77,14 @@ body
 	text-align:center;
 	margin-top:50px;
 	font-weight:bold;
-	background-color:#000000;
-	opacity:0.5;
 	padding-top:10px;
+	position:relative;
 }
 
 .citation
 {
 	font-size:25px;
+	position:relative;
 	color:#FFFFFF;
 }
 
@@ -223,10 +223,9 @@ body
 
 .infouser
 {
-	background-color:#000000;
-	border:solid grey 2px;
+	position:relative;
 	margin-top:50px;
-	height:200px;
+	min-height:200px;
 	color:#FFFFFF;
 }
 
@@ -234,6 +233,7 @@ body
 {
 	padding-left:30px;
 	padding-top:30px;
+	padding-bottom:20px;
 	position:relative;
 }
 
@@ -242,7 +242,6 @@ body
 	height:100px;
 	width:100px;
 	border:solid #FFFFFF 1px;
-	display:inline-block;
 }
 
 .usernamefont
@@ -254,10 +253,108 @@ body
 	color:#B45F04;
 }
 
+.stats-div
+{
+	padding-left:30px;
+	padding-top:30px;
+	position:relative;
+}
+
+.lvl-barre
+{
+	position:absolute;
+	top:150px;
+	height:20px;
+	right:30px;
+	left:30px;
+	border:solid #FFFFFF 1px;
+	text-align:center;
+}
+
+.lvl-barre-progress
+{
+	position:absolute;
+	background-color:#04B45F;
+	height:100%;
+	left:0px;
+	top:0px;
+	z-index:0;
+}
+
 .rankfont
 {
-	font-size:25px;
+	font-size:20px;
+	position:absolute;
+	top:108px;
+	left:150px;
+}
+
+.titlefont
+{
+	font-size:20px;
 	position:absolute;
 	top:80px;
 	left:150px;
+}
+
+.exp-text
+{
+	z-index:3;
+	position:relative;
+	margin-top:-8px;
+	font-size:20px;
+	color:#FFFFFF;
+}
+
+.pre-party-div
+{
+	height:50px;
+	background-color:#343a40;
+	margin-top:50px;
+	text-align:center;
+}
+
+.pre-party-div p
+{
+	font-size:30px;
+	color:#FFFFFF;
+}
+
+.party-div
+{
+	border:solid #343a40 2px;
+	min-height:300px;
+	max-height:500px;
+	background-color:#000000;
+	overflow-y:scroll;
+}
+
+.new-game-div
+{
+	margin-top:10px;
+	margin-right:10px;
+	border:dashed #FFFFFF 1px;
+	height:75px;
+	position:relative;
+}
+
+.new-square
+{
+	position:absolute;
+	top:10px;
+	left:0px;
+	width:55px;
+	height:55px;
+	border:solid #FFFFFF 1px;
+	text-align:center;
+	padding:5px;
+	cursor:pointer;
+}
+
+.new-square p
+{
+	font-weight:bold;
+	color:#FFFFFF;
+	font-size:20px;
+	margin-top:7px;
 }

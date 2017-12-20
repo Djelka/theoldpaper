@@ -38,9 +38,24 @@ class DefaultController extends Controller
         $userNbPost = $infoUser->getNbpost();
         $userNbVote = $infoUser->getNbVote();
         $userNbcounter = $infoUser->getNbCounter();
-        $userRank = $infoUser->getRank();
         $userExp = $infoUser->getExp();
         $userNextLvlExp = $infoUser->getNextlvlexp();
+        $userRank = $infoUser->getRank();
+
+        if ($infoUser->getExp() >= $infoUser->getNextlvlexp())
+        {
+            $infoUser->setExp($userExp - $userNextLvlExp);
+            $infoUser->setNextlvlexp($userNextLvlExp * 1.5);
+            $infoUser->setRank($userRank + 1);
+            $em->persist($infoUser);
+            $em->flush();
+            
+            $userExp = $infoUser->getExp();
+            $userNextLvlExp = $infoUser->getNextlvlexp();
+            $userRank = $infoUser->getRank();
+        }
+
+        $progressBar = ($userExp / $userNextLvlExp) * 100;
 
         return $this->render('FrontendBundle:Default:account.html.twig', array(
             'user' => $user,
@@ -50,6 +65,7 @@ class DefaultController extends Controller
             'userNbcounter' => $userNbcounter,
             'userRank' => $userRank,
             'userExp' => $userExp,
+            'progressBar' => $progressBar,
             'userNextLvlExp' => $userNextLvlExp
         ));
 

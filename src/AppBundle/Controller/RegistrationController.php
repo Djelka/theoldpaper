@@ -58,6 +58,13 @@ class RegistrationController extends Controller
 
             $datauser = new Datauser();
             $datauser->setIduser($user->getId());
+            $datauser->setNbpost(0);
+            $datauser->setRank(0);
+            $datauser->setExp(0);
+            $datauser->setNextlvlexp(100);
+            $datauser->setNbvote(0);
+            $datauser->setNbcounter(0);
+            $datauser->setNbgame(0);
             $em->persist($datauser);
             $em->flush();
         }

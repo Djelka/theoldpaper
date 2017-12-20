@@ -4,17 +4,41 @@
 
 	<div class="row">
 		<div class="infouser col-md-10 offset-md-1">
+			<div class="back-black"></div>
 			<div class="row">
 				<div class="col-md-6 usernamediv">
 					<div class="avatar"></div>
 					<p class="usernamefont">{{ app.user.username }}</p>
+					<!-- <p class="titlefont">"Justicier des abysses"</p> -->
 					<p class="rankfont">Rang : <span style="color:#B45F04;">{{ userRank }}</span></p>
+					<div class="lvl-barre">
+						<div class="lvl-barre-progress" style="right:{{ 100 - progressBar }}%;"></div>
+						<p class="exp-text">{{ userExp }} / {{ userNextLvlExp }}</p>
+					</div>
 				</div>
-				<div class="col-md-6" style="padding:10px;">
-					<p>{{ userNbGame }}</p>
-					<p>{{ userNbPost }}</p>
-					<p>{{ userNbVote }}</p>
-					<p>{{ userNbcounter }}</p>
+				<div class="col-md-6 stats-div">
+					<p>Nombre de parties jouées : <span style="color:#B45F04;">{{ userNbGame }}</span></p>
+					<p>Nombre de posts : <span style="color:#B45F04;">{{ userNbPost }}</span></p>
+					<p>Nombre de vote : <span style="color:#B45F04;">{{ userNbVote }}</span></p>
+					<p>Nombre de contre : <span style="color:#B45F04;">{{ userNbcounter }}</span></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="pre-party-div col-md-10 offset-md-1">
+			<p><strong>Liste des parties</strong></p>
+		</div>
+		<div class="party-div col-md-10 offset-md-1">
+			<div class="col-md-12 new-game-div">
+				<div class="col-md-6">
+					<div class="new-square">
+						<p>NEW</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+				
 				</div>
 			</div>
 		</div>
