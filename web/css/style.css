@@ -207,9 +207,20 @@ body
 {
 	height:50px;
 	width:50px;
-	border:solid #FFFFFF 1px;
 	display:inline-block;
 	margin:10px;
+	position:relative;
+}
+
+.logo img
+{
+	position:absolute;
+	height:100%;
+	left:0px;
+	width:100%;
+	border-radius:100px;
+	border:solid #FFFFFF 4px;
+	top:0px;
 }
 
 /* END GLOBAL */
@@ -357,4 +368,57 @@ body
 	color:#FFFFFF;
 	font-size:20px;
 	margin-top:7px;
+}
+
+.modal-create-header
+{
+	background-color:#343a40;
+}
+
+.modal-create-footer
+{
+	background-color:#343a40;
+}
+
+.modal-create-header h5
+{
+	color:#FFFFFF;
+}
+
+.modal-create-body img
+{
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:100%;
+	width:100%;
+}
+
+.input-type
+{
+	margin-top:20px;
+	width:100%;
+	height:25px;
+}
+
+.input-type-2
+{
+	margin-top:20px;
+	width:100%;
+	height:100px;
+}
+
+
+.input-div p
+{
+	position:relative;
+	color:#FFFFFF;
+	background-color:#000000;
+	opacity:0.8;
+	padding:10px;
+}
+
+.input-create-info
+{
+	display:none;
 }

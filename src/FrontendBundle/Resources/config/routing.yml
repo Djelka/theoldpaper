@@ -5,3 +5,7 @@ frontend_homepage:
 frontend_account:
     path:     /account
     defaults: { _controller: FrontendBundle:Default:account }
+
+frontend_new_game:
+    path:     /new-game
+    defaults: { _controller: FrontendBundle:Default:newgame }

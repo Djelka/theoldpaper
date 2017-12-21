@@ -36,9 +36,9 @@ class Session
     private $pass;
 
     /**
-     * @var string
+     * @var int
      *
-     * @ORM\Column(name="day", type="string", length=255, nullable=true)
+     * @ORM\Column(name="day", type="integer", nullable=true)
      */
     private $day;
 
@@ -56,6 +56,12 @@ class Session
      */
     private $state;
 
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="ownerid", type="integer", nullable=true)
+     */
+    private $ownerid;
 
     /**
      * @var string
@@ -124,9 +130,33 @@ class Session
     }
 
     /**
+     * Set ownerid
+     *
+     * @param integer $ownerid
+     *
+     * @return Session
+     */
+    public function setOwnerid($ownerid)
+    {
+        $this->ownerid = $ownerid;
+
+        return $this;
+    }
+
+    /**
+     * Get ownerid
+     *
+     * @return int
+     */
+    public function getOwnerid()
+    {
+        return $this->ownerid;
+    }
+
+    /**
      * Set day
      *
-     * @param string $day
+     * @param integer $day
      *
      * @return Session
      */
@@ -140,7 +170,7 @@ class Session
     /**
      * Get day
      *
-     * @return string
+     * @return int
      */
     public function getDay()
     {

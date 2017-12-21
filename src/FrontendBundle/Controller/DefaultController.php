@@ -5,6 +5,7 @@ namespace FrontendBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
+use FrontendBundle\Entity\Session;
 
 class DefaultController extends Controller
 {
@@ -71,6 +72,50 @@ class DefaultController extends Controller
             'userNbGamecreate' => $userNbGamecreate
 
         ));
+    }
 
+    public function NewgameAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->container->get('security.context')->getToken()->getUser();
+
+        $infoUser = $em->getRepository('FrontendBundle:Datauser')->findOneByIduser($user->getId());
+
+        $field1 = $request->request->get('name');
+        $field2 = $request->request->get('context');
+        $field3 = $request->request->get('players');
+        $field4 = $request->request->get('pass');
+
+        $party = new Session();
+        $party->setName($field1);
+        $party->setContext($field2);
+        $party->setPlayers($field3);
+
+        if ($field4 == null)
+        {
+            $party->setPass(null);
+        }
+        else
+        {
+            $party->setPass($field4);
+        }
+
+        $party->setOwnerid($infoUser->getIduser());
+
+        $party->setDay(0);
+        $party->setState(1);
+
+        $em->persist($party);
+        $em->flush();
+
+        $updateGameCreate = $infoUser->getNbgamecreate() + 1;
+        $infoUser->setNbgamecreate($updateGameCreate);
+
+        $em->persist($infoUser);
+        $em->flush();
+
+        $url = $this->generateUrl('frontend_account');
+        $response = new RedirectResponse($url);
+        return $response;
     }
 }

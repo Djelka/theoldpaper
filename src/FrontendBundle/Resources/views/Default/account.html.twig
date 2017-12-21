@@ -36,7 +36,7 @@
 		<div class="party-div col-md-10 offset-md-1">
 			<div class="col-md-12 new-game-div">
 				<div class="col-md-6">
-					<div class="new-square">
+					<div class="new-square" data-toggle="modal" data-target="#exampleModal">
 						<p>NEW</p>
 					</div>
 				</div>
@@ -48,6 +48,55 @@
 	</div>
 
 	<div class="empty-div col-md-12">
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header modal-create-header">
+	        <h5 class="modal-title" id="exampleModalLabel"><strong>Nouvelle partie</strong></h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <form method="POST" action="{{ path('frontend_new_game') }}">
+				<div class="modal-body modal-create-body" style="position:relative;">
+		        	<img src="{{ asset('img/paper.jpeg') }}">
+
+					<div class="col-md-12 input-div">
+						<input class="input-type" id="input-create-1" type="text" name="name" placeholder="Nom de la partie">
+						<p class="input-create-1-info input-create-info">Entrez un nom pour votre partie afin que les joueurs puissent la trouver. <strong>(EX : RP SERIEUX - Les aventurier du nouveau continent).</strong></p>
+					</div>
+
+					<div class="col-md-12  input-div">
+						<textarea class="input-type-2" id="input-create-2" type="text" name="context" placeholder="Contexte de la partie"></textarea>
+						<p class="input-create-2-info input-create-info">Racontez le contexte dans lequel vous commencerez vous ainsi que les autres joueurs.<strong>(EX : Après 3 jours de navigation, votre bateau s'échoue sur une île ...).</strong></p>
+					</div>
+
+					<div class="col-md-12  input-div">
+						<input class="input-type" id="input-create-3" type="number" name="players" placeholder="Nombre de joueurs">
+						<p class="input-create-3-info input-create-info">Ce nombre définira le nombre de personnes pouvant rejoindre la partie.<strong>(Il est conseillé de former des petites communauté pour faciliter la fluidité du jeu).</strong></p>
+					</div>
+
+					<div class="col-md-12  input-div">
+						<input class="input-type" id="input-create-4" type="text" name="pass" placeholder="Mot de passe (Facultatif)">
+						<p class="input-create-4-info input-create-info">Entrez un mot de passe afin de limiter l'accès à votre partie.<strong>(Si ce champs est vide lors de la validation, Tout le monde pourra vous rejoindre.).</strong></p>
+					</div>
+
+					<div class="col-md-12" style="height:20px;">
+					</div>
+
+				</div>
+
+				<div class="modal-footer modal-create-footer">
+					<button type="button" style="cursor:pointer;" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+					<button type="submit" style="cursor:pointer;background-color:#B45F04;color:#FFFFFF;" class="btn btn-default" >Enregistrer</button>
+				</div>
+
+			</form>
+	    </div>
+	  </div>
 	</div>
 
 {% endblock %}
